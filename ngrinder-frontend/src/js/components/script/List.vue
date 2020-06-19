@@ -130,8 +130,7 @@
         static prepare(route) {
             let promise;
             if (route.name === 'scriptSearch') {
-                const query = route.query.query || -1;
-                promise = Base.prototype.$http.get(`/script/api/search?query=${query}`);
+                promise = Base.prototype.$http.get(`/script/api/search?query=${route.query.query}`);
             } else {
                 promise = Base.prototype.$http.get(`/script/api/${route.params.remainedPath || ''}`);
             }
