@@ -58,7 +58,6 @@
                          :title="i18n('perfTest.config.targetHost')"
                          :data-content="i18n('perfTest.config.targetHost.help')"
                          data-toggle="popover"
-                         data-html="true"
                          data-trigger="hover"
                          data-placement="bottom">
                         <button v-shortkey="['ctrl', 'shift', 'a']"
@@ -87,7 +86,7 @@
                 </code-mirror>
             </pane>
             <pane v-if="validationResult" :min-size="15" :size="100 - editorSize">
-                <pre class="border h-100 validation-result" v-html="validationResult"></pre>
+                <pre class="border h-100 validation-result" v-text="validationResult"></pre>
             </pane>
         </splitpanes>
         <div class="script-samples-link" ref="sampleLink">
